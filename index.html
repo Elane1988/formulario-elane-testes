@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulário Elane Teste Para Automação</title>
+  <style>
+    /* Paleta de cores e variáveis */
+    :root {
+      --bg-gradient: linear-gradient(135deg, #fbe4ff, #ffd6ef);
+      --primary: #b14ee0;
+      --primary-dark: #8e2dc5;
+      --accent: #ff78c7;
+      --text-dark: #333;
+      --text-light: #fff;
+      --border: #e2bdf8;
+      --success: #7b2cbf;
+      --error: #d63384;
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      background: var(--bg-gradient);
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(177, 78, 224, 0.25);
+      padding: 30px;
+      width: 340px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(177, 78, 224, 0.35);
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 18px;
+      color: var(--primary-dark);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--primary-dark);
+      text-align: left;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 6px;
+      box-sizing: border-box;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 6px rgba(177, 78, 224, 0.3);
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      background: var(--primary);
+      color: var(--text-light);
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+      transform: scale(1.03);
+    }
+
+    .note {
+      font-size: 13px;
+      margin-top: 14px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    /* Animação do check de sucesso */
+    .checkmark {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--success);
+      position: relative;
+      animation: pop 0.4s ease forwards;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .checkmark::after {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 3px;
+      width: 6px;
+      height: 12px;
+      border-right: 2px solid var(--success);
+      border-bottom: 2px solid var(--success);
+      transform: rotate(45deg);
+      opacity: 0;
+      animation: draw 0.4s 0.3s ease forwards;
+    }
+
+    @keyframes draw {
+      to { opacity: 1; }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .visible {
+      opacity: 1 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card" role="main" aria-labelledby="form-title">
+    <h1 id="form-title">🌸 Formulário Elane 🌸</h1>
+
+    <form id="elaneForm" autocomplete="off" novalidate>
+      <label for="login">Login</label>
+      <input id="login" name="login" type="text" placeholder="Digite seu login" required data-test="login" />
+
+      <label for="senha">Senha</label>
+      <input id="senha" name="senha" type="password" placeholder="Digite sua senha" required data-test="senha" />
+
+      <button id="btnEnviar" type="submit" data-test="submit">Enviar</button>
+
+      <p class="note" id="resultado" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById('elaneForm');
+    const resultado = document.getElementById('resultado');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const login = document.getElementById('login').value.trim();
+      const senha = document.getElementById('senha').value;
+
+      if (!login || !senha) {
+        resultado.innerHTML = '💖 Por favor preencha login e senha.';
+        resultado.style.color = 'var(--error)';
+        resultado.classList.add('visible');
+        return;
+      }
+
+      // Mensagem de sucesso com animação
+      resultado.innerHTML = `<span class="checkmark"></span>Login recebido com sucesso!`;
+      resultado.style.color = 'var(--success)';
+      resultado.classList.add('visible');
+
+      console.log({ login, senha });
+    });
+  </script>
+</body>
+</html>
+
+
+
