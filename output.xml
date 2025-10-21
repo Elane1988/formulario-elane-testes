@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-10-21T11:07:46.393352" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Formulario" source="C:\Users\foliv\OneDrive\Documentos\OneDrive\Área de Trabalho\form-elane-teste\tests\test_formulario.robot">
+<test id="s1-t1" name="Abrir formulário e validar campos obrigatórios" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-21T11:07:46.886224" level="INFO">Opening browser 'chrome' to base url 'file://C:\Users\foliv\OneDrive\Documentos\OneDrive\Área de Trabalho\form-elane-teste\tests/../index.html'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-21T11:07:46.885515" elapsed="3.579760"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-21T11:07:50.466532" level="INFO">Clicking button 'id=btnEnviar'.</msg>
+<arg>id=btnEnviar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-21T11:07:50.465851" elapsed="0.163264"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-21T11:07:50.651649" level="INFO">Current page contains text 'Por favor preencha login e senha.'.</msg>
+<arg>Por favor preencha login e senha.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-21T11:07:50.629637" elapsed="0.022183"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-21T11:07:50.652305" elapsed="2.538281"/>
+</kw>
+<status status="PASS" start="2025-10-21T11:07:46.883266" elapsed="6.308017"/>
+</test>
+<test id="s1-t2" name="Preencher login e senha com sucesso" line="15">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-21T11:07:53.194391" level="INFO">Opening browser 'chrome' to base url 'file://C:\Users\foliv\OneDrive\Documentos\OneDrive\Área de Trabalho\form-elane-teste\tests/../index.html'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-21T11:07:53.193848" elapsed="2.172194"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-21T11:07:55.367204" level="INFO">Typing text 'elane_user' into text field 'id=login'.</msg>
+<arg>id=login</arg>
+<arg>elane_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-21T11:07:55.366659" elapsed="0.162553"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-10-21T11:07:55.530168" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2025-10-21T11:07:55.582664" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=senha</arg>
+<arg>123456</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-21T11:07:55.529753" elapsed="0.112187"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-21T11:07:55.642768" level="INFO">Clicking button 'id=btnEnviar'.</msg>
+<arg>id=btnEnviar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-21T11:07:55.642388" elapsed="0.090153"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-21T11:07:55.751635" level="INFO">Current page contains text 'Login recebido com sucesso!'.</msg>
+<arg>Login recebido com sucesso!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-21T11:07:55.733089" elapsed="0.018681"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-21T11:07:55.752292" elapsed="2.182976"/>
+</kw>
+<status status="PASS" start="2025-10-21T11:07:53.192779" elapsed="4.742950"/>
+</test>
+<status status="PASS" start="2025-10-21T11:07:46.397131" elapsed="11.540248"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Formulario" id="s1" pass="2" fail="0" skip="0">Test Formulario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
